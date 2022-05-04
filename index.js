@@ -41,23 +41,23 @@ function initializeAccessibilityWidget() {
   document.body.insertBefore(accessibilityBar, document.body.firstChild);
 
   // Create the accessibility menu buttons
-  function createButtons(el) {
+  function createButtons(elem) {
     const button = document.createElement('button');
     button.type = 'button';
-    button.classList.add(el.class);
-    button.setAttribute('data-accessibility', el.dataAccessibility);
+    button.classList.add(elem.class);
+    button.setAttribute('data-accessibility', elem.dataAccessibility);
     accessibilityBar.appendChild(button);
 
-    if (el.icon === 'svg') {
+    if (elem.icon === 'svg') {
       const icon = document.createElement('img');
-      icon.src = el.source;
-      icon.alt = el.alt;
+      icon.src = elem.source;
+      icon.alt = elem.alt;
       button.appendChild(icon);
-      icon.classList.add(...el.iconClass);
+      icon.classList.add(...elem.iconClass);
     }
 
-    const textButton = document.createTextNode(el.text);
-    button.appendChild(textButton);
+    const btnText = document.createTextNode(elem.text);
+    button.appendChild(btnText);
   }
 
   const btns = {
@@ -144,11 +144,11 @@ function initializeAccessibilityWidget() {
   const body = document.body; //<body> for the adjusts classes
   const btnAccessibility = document.querySelectorAll('.setAccessibility'); // Getting settings buttons
 
-  if (btnAccessibilityBar) {
-    setTimeout(function () {
-      btnAccessibilityBar.classList.add('collapsed');
-    }, 2000);
-  }
+  //   if (btnAccessibilityBar) {
+  //     setTimeout(function () {
+  //       btnAccessibilityBar.classList.add('collapsed');
+  //     }, 2000);
+  //   }
 
   // Reading line
   const readingLine = document.createElement('div');
@@ -193,6 +193,7 @@ function initializeAccessibilityWidget() {
         break;
       case 'oriFont':
         window.toggleFontSize(action);
+        accessibilityBar.classList.toggle('active');
         break;
       case 'decFont':
         window.toggleFontSize(action);
@@ -208,11 +209,11 @@ function initializeAccessibilityWidget() {
         window.toggleFontSize('oriFont');
         body.classList.remove('accessibility_readingLine');
         body.classList.remove('accessibility_markerLine');
+        accessibilityBar.classList.toggle('active');
         break;
       default:
         break;
     }
-    accessibilityBar.classList.toggle('active');
   }
 
   btnAccessibility.forEach((button) =>

@@ -1,0 +1,145 @@
+:root {
+  /* Color CSS variables */
+  --color-secondary: #f36e23;
+  --color-secondary-light: #ffb794;
+  --color-primary: #07116b;
+  --color-primary-light: hsl(234, 88%, 40%);
+  --color-primary-extra-light: #5960a748;
+  --color-bg: #e5e5e5;
+  --color-bg-dark: #f8f8f8;
+  --color-grey: #999999;
+  --color-grey-light: #dddddd;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Font-family CSS variables */
+  --ff-roboto: 'Roboto', sans-serif;
+
+  /* Responsive font-size variables */
+  --fs-placeholder: clamp(0.875rem, 0.5rem + 1.5vw, 2rem);
+  --fs-14: clamp(0.75rem, 0.715rem + 0.16vw, 0.875rem);
+  --fs-16: clamp(0.9375rem, 0.9231rem + 0.0641vw, 1rem);
+  --fs-18: clamp(1rem, 0.925rem + 0.2vw, 1.125rem);
+  --fs-20: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
+  --fs-24: clamp(1.125rem, 1.1rem + 0.4vw, 1.5rem);
+  --fs-28: clamp(1.25rem, 1.1346rem + 0.5128vw, 1.75rem);
+  --fs-32: clamp(1.375rem, 1.2308rem + 0.641vw, 2rem);
+  --fs-36: clamp(1.5rem, 1.05rem + 1.2vw, 2.25rem);
+  --fs-48: clamp(1.75rem, 1.4615rem + 1.2821vw, 3rem);
+  --fs-56: clamp(1.75rem, 1.3462rem + 1.7949vw, 3.5rem);
+  --fs-64: clamp(1.75rem, 1.2308rem + 2.3077vw, 4rem);
+
+  /* Other CSS variables*/
+  --responsive-1: clamp(0.5rem, 0.3846rem + 0.5128vw, 1rem);
+  --responsive-2: clamp(1rem, 0.7692rem + 1.0256vw, 2rem);
+  --responsive-3: clamp(1.5rem, 1.1538rem + 1.5385vw, 3rem);
+  --responsive-4: clamp(2rem, 1.5385rem + 2.0513vw, 4rem);
+  --responsive-5: clamp(2.5rem, 1.9231rem + 2.5641vw, 5rem);
+  --responsive-6: clamp(3rem, 2.3077rem + 3.0769vw, 6rem);
+  --responsive-8: clamp(4rem, 3.0769rem + 4.1026vw, 8rem);
+  --responsive-10: clamp(5rem, 3.8462rem + 5.1282vw, 10rem);
+
+  /* Elements height variables */
+  --header-height: clamp(3.5rem, 3.2rem + 1.5vw, 5rem);
+}
+
+/* Global reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+/* General styling properties and typography start */
+body {
+  min-height: 100vh;
+
+  font-family: var(--ff-manrope);
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: var(--fs-48);
+  font-weight: 900;
+
+  text-align: center;
+  margin-block: 2rem 4rem;
+}
+
+h2 {
+  font-family: var(--ff-manrope);
+  font-size: var(--fs-36);
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-family: var(--ff-manrope);
+  font-size: var(--fs-24);
+  font-weight: 700;
+}
+
+p {
+  font-size: clamp(1rem, 0.925rem + 0.2vw, 1.125rem);
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+}
+
+a {
+  font-family: inherit;
+  font-size: var(--fs-18);
+  font-weight: 400;
+  color: var(--color-primary);
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+  display: block;
+  max-width: 100%;
+}
+
+button,
+label,
+input {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-18);
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: var(--color-primary);
+}
