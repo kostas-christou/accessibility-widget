@@ -212,6 +212,7 @@ function initializeAccessibilityWidget() {
         accessibilityBar.classList.toggle('active');
         break;
       default:
+        accessibilityBar.classList.toggle('active');
         break;
     }
   }
